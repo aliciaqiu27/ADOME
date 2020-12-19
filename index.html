@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" integrity="sha512-+WF6UMXHki/uCy0vATJzyA9EmAcohIQuwpNz0qEO+5UeE5ibPejMRdFuARSrl1trs3skqie0rY/gNiolfaef5w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css"/>
+    
     <title>Document</title>
 </head>
 
 <body>
 
-    <div class="relative bg-white">
+    <div class="relative">
         jhfdjhfdsjhfdskjhfdskj
     </div>
 
-    <div class="inline-grid grid-cols-3 gap-x-4">
-        <div><button id="left">left button</button></div>
-        <div id="picture"><img class ="cover" src="https://placekitten.com/2000/2000"><button class="cover" id="details">pet details</button></div>
-        <div><button id="right">right button</button></div>
+    <div class="inline-grid grid-cols-3 gap-x-4 bg-gray-100">
+        <div><button id="left" class="bg-red-200 text-center">left button</button></div>
+        <div id="picture"><img class ="cover" src="https://placekitten.com/2000/2000">
+        <button class="bg-purple-400 md:hover:bg-blue-700" id="details">pet details</button></div>
+        <div><button id="right" class="bg-green-200">right button</button></div>
     </div>
+
+    <footer class="bg-gray-100 mx-auto">blah</footer>
     
 </body>
 </html>
