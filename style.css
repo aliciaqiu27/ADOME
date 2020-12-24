@@ -1,5 +1,23 @@
-button {
-text-align: center
+h1 {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font: size 100;
 }
 
+#button {
+text-align: center;
+}
+.right {
+    float: right
+}
+#petInfo {
+    top: auto;
+    left: 565px;
+    width: 400px;
+    min-height: 500px;
+    height: auto;
+    position: relative;
+}
 
