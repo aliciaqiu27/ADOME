@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" integrity="sha512-+WF6UMXHki/uCy0vATJzyA9EmAcohIQuwpNz0qEO+5UeE5ibPejMRdFuARSrl1trs3skqie0rY/gNiolfaef5w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="icon" href="C:\Users\xcgab\Downloads\dog.ico" type="image/x-icon"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 
-    <title>Document</title>
+    <title>Adome</title>
 </head>
 
 <body>
-    <div class="relative">
-        jhfdjhfdsjhfdskjhfdskj
-    </div>
+    <h1>ADOME : Find a Fur-end</h1>
 
     <div class="inline-grid grid-cols-3 gap-x-4 bg-gray-100">
-        <div><button id="left" class="bg-red-200 text-center">left button</button></div>
-        <img id="picture" class ="cover" src="https://tracker.rescuegroups.org/pet?16280800">
-        <button class="bg-purple-400 md:hover:bg-blue-700" id="details">pet details</button></div>
-        <div><button id="right" class="bg-green-200">right button</button></div>
-    </div>
+
+        <div id="petInfo" class="container float-center">
+            <form>
+                <img id="picture" class ="cover" src="https://tracker.rescuegroups.org/pet?16280800" width= 800px>
+                <button id="left" class="bg-green-200">Left</button>
+                <button class="bg-purple-400 md:hover:bg-blue-700" id="details">pet details</button>
+                <button id="right" class="bg-red-200 text-center">Right</button>
+            </form>
+        </div>
 
     <footer class="bg-gray-100 mx-auto">blah</footer>
     
