@@ -21,3 +21,22 @@ text-align: center;
     position: relative;
 }
 
+.carousel-item {
+    height: 900px;
+}
+
+#picture{
+    height: 900px;
+}
+
+.picture{
+    height: 900px;
+}
+
+button {
+    align-items: center;
+}
+
+.buttonsContainer {
+    align-items: center;
+}
