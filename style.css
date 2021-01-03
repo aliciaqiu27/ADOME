@@ -1,42 +1,111 @@
-h1 {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    font: size 100;
+body {
+    background-color: rgba(248, 248, 248, 0.809);
 }
 
+.navigation {
+    background-color: rgb(255, 255, 255);
+}
+
+h1 {
+    color: rgba(1, 155, 152, 0.789);
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
+    display: inline-block;
+    /* padding: 10px 10px; */
+    position: absolute;
+    top: 1%;
+    left: 4%;
+}
+
+.logo {
+    display: inline-block;
+    width: 300px;
+    padding: 30px 40px;
+    left: 10%;
+}
+
+#mainContainer {
+    padding: 50px;
+    width: auto;
+    align-items: center;
+    margin: auto;
+    /* background-color: rgba(248, 248, 248, 0.809); */
+}
+
+.carousel {
+    height: 910;
+    margin: auto;
+}
+
+.carousel-inner{
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    box-shadow: rgba(160, 131, 131, 0.719) 2px 2px 5px 2px;
+}
+
+
 #button {
-text-align: center;
+  text-align: center;
+  margin: auto;
 }
-.right {
-    float: right
-}
+
 #petInfo {
-    top: auto;
-    left: 565px;
-    width: 400px;
-    min-height: 500px;
-    height: auto;
-    position: relative;
+  width: 900px;
+  font-size: 50px;
+  width:100%;
+  text-align: center;
+  /* background-color: rgba(248, 248, 248, 0.809); */
+}
+
+.picture {
+  height: 600px;
+}
+
+.carousel-open:checked + .carousel-item {
+  position: static;
+  opacity: 100;
 }
 
 .carousel-item {
-    height: 900px;
+  -webkit-transition: opacity 0.6s ease-out;
+  transition: opacity 0.6s ease-out;
 }
 
-#picture{
-    height: 900px;
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+  display: block;
 }
 
-.picture{
-    height: 900px;
+.carousel-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
 }
 
-button {
-    align-items: center;
-}
-
-.buttonsContainer {
-    align-items: center;
+#carousel-1:checked
+  ~ .control-1
+  ~ .carousel-indicators
+  li:nth-child(1)
+  .carousel-bullet,
+#carousel-2:checked
+  ~ .control-2
+  ~ .carousel-indicators
+  li:nth-child(2)
+  .carousel-bullet,
+#carousel-3:checked
+  ~ .control-3
+  ~ .carousel-indicators
+  li:nth-child(3)
+  .carousel-bullet {
+  color: rgba(55, 161, 202, 0.822);
+  /*Set to match the Tailwind colour you want the active one to be */
 }
