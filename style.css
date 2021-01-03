@@ -51,14 +51,14 @@ body {
 }
 
 #petInfo {
-  height: 300px;
+  height: 250px;
   font-size: 25px;
-  width: 800px;
+  width: 1230px;
   text-align: left;
 }
 
 #buttonContainer {
-    padding: 10px 20px;
+    padding: 10px 10px;
     text-align: center;
 }
 
@@ -126,4 +126,14 @@ hr.rounded {
 footer {
     text-align: center;
     background-color: lightblue;
+}
+
+.pictureFinalArray {
+    padding: 10px 2px;
+    width: 405px;
+    display: inline-block;
+}
+
+#petImages {
+    text-align: center;
 }

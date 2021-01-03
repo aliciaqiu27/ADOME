@@ -122,7 +122,7 @@ var settings = {
     "Content-Type": "application/vnd.api+json",
     "Authorization": "TGBdZnRM"
   },
-  // "data": "{\n    \"data\": {\n        \"filters\": \n    \t[\n    \t\t{\n    \t\t\t\"fieldName\": \"animals.breedPrimaryId\",\n    \t\t\t\"operation\": \"equal\",\n    \t\t\t\"criteria\": \"90\"\n    \t\t},\n    \t\t{\n    \t\t\t\"fieldName\": \"animals.sizeGroup\",\n    \t\t\t\"operation\": \"equal\",\n    \t\t\t\"criteria\": [\"Small\",\"Medium\"]\n    \t\t}\n    \t],\n    \t\"filterProcessing\": \"1 and 2\",\n        \"filterRadius\":\n        \t{\n        \t\t\"miles\": 100,\n        \t\t\"lat\": 34.1031,\n        \t\t\"lon\": -118.416\n        \t}\n        \n    }\n}\n",
+  "data": "{\n    \"data\": {\n        \"filters\": \n    \t[\n    \t\t{\n    \t\t\t\"fieldName\": \"animals.id\",\n    \t\t\t\"operation\": \"equal\",\n    \t\t\t\"criteria\": \"10006340\"\n    \t\t},\n    \t\t{\n    \t\t\t\"fieldName\": \"animals.sizeGroup\",\n    \t\t\t\"operation\": \"equal\",\n    \t\t\t\"criteria\": [\"Small\",\"Medium\"]\n    \t\t}\n    \t],\n    \t\"filterProcessing\": \"1 and 2\",\n        \"filterRadius\":\n        \t{\n        \t\t\"miles\": 100,\n        \t\t\"lat\": 34.1031,\n        \t\t\"lon\": -118.416\n        \t}\n        \n    }\n}\n",
 };
 
 $.ajax(settings).done(function (response) {
@@ -130,12 +130,24 @@ console.log(response);
 console.log(response.data[0].attributes.adoptionFeeString);
 
 
-var picture = response.data[1].attributes.pictureThumbnailUrl;
-var descriptionText = response.data[1].attributes.descriptionText;
-
-console.log(picture);
+var descriptionText = response.data[0].attributes.descriptionText;
 console.log(descriptionText);
-
-$(".picture").attr("src", picture);
 $(".descriptionTextDiv").append(descriptionText)
+
+for (let i = 0; i < response.included.length; i++) {
+  const picture = response.included[i].type;
+  console.log(picture);
+  
+  if (picture==="pictures") {
+
+    const pictureArray = response.included[i].attributes.large.url;
+    const pictureFinal = $("<img>").attr("src", pictureArray);
+    const pictureResized = pictureFinal.addClass("pictureFinalArray");
+
+    console.log(pictureArray);
+
+    $("#petImages").append(pictureResized)
+  }
+}
+
 });
