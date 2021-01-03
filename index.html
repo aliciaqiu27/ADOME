@@ -8,8 +8,8 @@
     <!-- <link rel="icon" href="C:\Users\xcgab\Downloads\dog.ico" type="image/x-icon"/> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- <script defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Lobster&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Lobster&display=swap" rel="stylesheet"> -->
 
 
 </head>
@@ -20,20 +20,19 @@
 <body>
 
 <main id="mainContainer" class="container mx-auto">
-    
 <section id="navContainer" class="container mx-auto">
 <nav class="flex items-center justify-between flex-wrap">
-    <div class="flex items-center flex-shrink-0 text-white mr-6">
+    <div class="flex items-center flex-shrink-0 mr-6">
     <img src="Logo_AQC.PNG" alt="Logo" class="logo">
     </div>
         <div>
-                        <a href="#responsive-header" class="block text-2xl mt-4 lg:inline-block lg:mt-0 text-white-200 hover:text-white mr-5">
+                        <a href="#responsive-header" class="block text-2xl mt-4 lg:inline-block lg:mt-0 text-black-200 mr-5">
                             ♡ Save
                         </a>
-                        <a href="#responsive-header" class="block text-2xl mt-4 lg:inline-block lg:mt-0 text-white-200 hover:text-white mr-5">
+                        <a href="#responsive-header" class="block text-2xl mt-4 lg:inline-block lg:mt-0 text-black-200 mr-5">
                             Examples
                         </a>
-                        <a href="#responsive-header" class="block text-2xl mt-4 lg:inline-block lg:mt-2 text-white-200 hover:text-white mr-5">
+                        <a href="#responsive-header" class="block text-2xl mt-4 lg:inline-block lg:mt-2 text-black-200 mr-5">
                             Home
                         </a>
         </div>
@@ -51,8 +50,8 @@
 
     <!-- <div id="mainContainer" class="row"> -->
     <!-- <div class="col-12"> -->
-        <hr class="rounded">
         <section id="bodyContainer" class="container mx-auto">
+        <hr class="rounded">
         <article id="carouselContainer" class="font-sans leading-normal tracking-normal">
             <div class="carousel relative">
             <div class="carousel-inner relative overflow-hidden w-full">
@@ -118,18 +117,19 @@
                 </ol>
             </article>
 
-<div class="h-64 grid grid-rows-1 grid-flow-col gap-12">
-        <div id="petInfo">
+<div id="petInfo" class="container mx-auto">
+            <div class="descriptionTextDiv"></div>
+        </div>
+<div id="buttonContainer" class="container mx-auto">
             <form>
-                <button class="bg-red-500 text-white font-bold py-2 px-4 rounded cursor-pointer">
+                <button class="bg-red-500 text-white font-bold py-8 px-8 rounded cursor-pointer">
                 ←
                 </button>
-                <button class="bg-green-500 text-white font-bold py-2 px-4 rounded cursor-pointer">
+                <button class="bg-green-500 text-white font-bold py-8 px-8 rounded cursor-pointer">
                 →
                 </button>
             </form>
         </div>
-</div>
 
 <hr class="rounded">
 <footer class="footer">©2020-2021 ADOME, Inc.
