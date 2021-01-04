@@ -28,8 +28,8 @@ body {
     padding: 30px 20px 10px 10px;
 }
 .homepageImg {
-    width: 800px;
-    height: 1000px;
+    width: 700px;
+    height: 900px;
     margin:auto;
     padding: 30px 20px;
 }
@@ -42,8 +42,9 @@ body {
 
 #description {
     color: rgba(98, 0, 255, 0.789);
-    text-align: left;
+    text-align: center;
     font-size: 50px;
+    font-style: italic;
 }
 
 .start {
@@ -87,9 +88,10 @@ button {
     display: inline-block;
 }
 
-#petImages {
+/* #petImages {
     text-align: center;
-}
+    display: inline-block;
+} */
 
 hr.rounded {
   border-top: 2px solid #bbb;
