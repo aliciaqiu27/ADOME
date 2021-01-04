@@ -1,17 +1,11 @@
 
-        $("#save").on("click", function(event) {
-
-        // Here, it prevents the submit button from trying to submit a form when clicked
-        event.preventDefault();
-        $("#petImages").empty();
-        $(".descriptionTextDiv").empty();
-        
         $.ajax({
             url: "https://api.rescuegroups.org/v5/public/animals/search/available/",
             headers: { Authorization: "TGBdZnRM" },
             }).then(function (response) {
                 console.log(response);
          
+
             let animals = [];
                 for (let i = 0; i < response.data.length; i++) {
                     let animalObj = {
@@ -54,17 +48,35 @@
                             }
                         }
                     }
+        animals.join("")
 
 
-                for (let k = 0; k < animals.length; k++) {
-                    let pictureFinal0 = $("<img>")
-                    let pictureFinal1 = $("<img>")
-                    let picture0 = pictureFinal0.attr("src", animals[k].imgURL0);
-                    const picture1 = pictureFinal1.attr("src", animals[k].imgURL1);
-                    console.log(picture0);
-                    const pictureResized0 = picture0.addClass("pictureFinalArray");
-                    const pictureResized1 = picture1.addClass("pictureFinalArray");
-                    $("#petImages").append(pictureResized0,pictureResized1);
+        $("#save").on("click", function(event) {
+
+        // Here, it prevents the submit button from trying to submit a form when clicked
+        event.preventDefault();
+        
+        $("#petImages").empty();
+        $(".descriptionTextDiv").empty();
+
+        var picture0 = $("<img>")
+        var picture1 = $("<img>")
+
+                    for (let i = 0; i < animals.length; i++) {
+                        
+                        let animalsArray0 = animals[i].imgURL0;
+                        let animalsArray1 = animals[i].imgURL1;
+                        let image0 = $(picture0).attr("src", animalsArray0);
+                        let image1 = $(picture1).attr("src", animalsArray1);
+                        
+                        console.log(picture0);
+                        let pictureResized0 = image0.addClass("pictureFinalArray");
+                        let pictureResized1 = image1.addClass("pictureFinalArray");
+                        $("#petImages").append(pictureResized0, pictureResized1);
+
+
+                        let descriptionText = response.data[i].attributes.descriptionText;
+                        $(".descriptionTextDiv").append(descriptionText);
                 // console.log(pictureArray);
                     }
             });
