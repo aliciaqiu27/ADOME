@@ -51,19 +51,23 @@
         animals.join("")
 
 
-        $("#save").on("click", function(event) {
+        $(".start").on("click", function(event) {
+
+        
+        $("#homeContainer").addClass("hide");
+        $("#bodyContainer").removeClass("hide");
 
         // Here, it prevents the submit button from trying to submit a form when clicked
         event.preventDefault();
         
         $("#petImages").empty();
         $(".descriptionTextDiv").empty();
-
-        var picture0 = $("<img>")
-        var picture1 = $("<img>")
-
-                    for (let i = 0; i < animals.length; i++) {
-                        
+        
+        
+        for (let i = 0; i < animals.length; i++) {
+            var picture0 = $("<img>")
+            var picture1 = $("<img>")
+            
                         let animalsArray0 = animals[i].imgURL0;
                         let animalsArray1 = animals[i].imgURL1;
                         let image0 = $(picture0).attr("src", animalsArray0);
@@ -81,4 +85,15 @@
                     }
             });
     });
+
+    $("#home").on("click", function(event) {
+
+        $("#bodyContainer").addClass("hide");
+        $("#homeContainer").removeClass("hide");
+    });
+    
+
+     $("#right").on("click", function(event) {
+        localStorage.setItem("cities",animals);
+     });
     
