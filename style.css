@@ -1,5 +1,7 @@
 body {
     background: url(Background-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #mainContainer {
@@ -7,7 +9,7 @@ body {
 }
 
 #bodyContainer{
-    background-color: lightblue;
+    background-color: rgb(221, 247, 255);
     
 }
 
@@ -51,10 +53,11 @@ body {
 }
 
 #petInfo {
-  height: 250px;
+  max-height: 40%;
   font-size: 25px;
   width: 1230px;
-  text-align: left;
+  text-align: center;
+  max-width: 60%;
 }
 
 #buttonContainer {
@@ -125,7 +128,7 @@ hr.rounded {
 
 footer {
     text-align: center;
-    background-color: lightblue;
+    background-color: rgb(221, 247, 255);
 }
 
 .pictureFinalArray {
