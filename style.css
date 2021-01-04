@@ -20,8 +20,8 @@ body {
 }
 
 .headerImg {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
 }
 
 .block {
@@ -84,14 +84,14 @@ button {
 
 .pictureFinalArray {
     padding: 10px 2px;
-    width: 605px;
+    width: 700px;
+    height: 800px;
     display: inline-block;
 }
 
-/* #petImages {
-    text-align: center;
+#petImages {
     display: inline-block;
-} */
+}
 
 hr.rounded {
   border-top: 2px solid #bbb;
