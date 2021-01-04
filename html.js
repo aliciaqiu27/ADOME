@@ -1,136 +1,99 @@
-// // google maps api 
-// let map, infoWindow;
-// var apiKey = ""
 
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById("map"), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 6,
-//   });
-//   infoWindow = new google.maps.InfoWindow();
-//   const locationButton = document.createElement("button");
-//   locationButton.textContent = "Pan to Current Location";
-//   locationButton.classList.add("custom-map-control-button");
-//   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-//   locationButton.addEventListener("click", () => {
-//     // Try HTML5 geolocation.
-//     if (navigator.geolocation) {
-//       navigator.geolocation.getCurrentPosition(
-//         (position) => {
-//           const pos = {
-//             lat: position.coords.latitude,
-//             lng: position.coords.longitude,
-//           };
-//           infoWindow.setPosition(pos);
-//           infoWindow.setContent("Location found.");
-//           infoWindow.open(map);
-//           map.setCenter(pos);
-//         },
-//         () => {
-//           handleLocationError(true, infoWindow, map.getCenter());
-//         }
-//       );
-//     } else {
-//       // Browser doesn't support Geolocation
-//       handleLocationError(false, infoWindow, map.getCenter());
-//     }
-//   });
-// }
+        $.ajax({
+            url: "https://api.rescuegroups.org/v5/public/animals/search/available/",
+            headers: { Authorization: "TGBdZnRM" },
+            }).then(function (response) {
+                console.log(response);
+         
 
-// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-//   infoWindow.setPosition(pos);
-//   infoWindow.setContent(
-//     browserHasGeolocation
-//       ? "Error: The Geolocation service failed."
-//       : "Error: Your browser doesn't support geolocation."
-//   );
-//   infoWindow.open(map);
-// }
+            let animals = [];
+                for (let i = 0; i < response.data.length; i++) {
+                    let animalObj = {
+                        name: response.data[i].attributes.name,
+                        //other animal data here
+                    };
+                    if (response.data[i].relationships.pictures.data[0]) {
+                        animalObj.id0 =
+                            response.data[i].relationships.pictures.data[0].id;
+                    }
+                    if (response.data[i].relationships.pictures.data[1]) {
+                        animalObj.id1 =
+                            response.data[i].relationships.pictures.data[1].id;
+                    }
+                    if (response.data[i].relationships.pictures.data[2]) {
+                        animalObj.id2 =
+                            response.data[i].relationships.pictures.data[2].id;
+                    }
+                    animals.push(animalObj);
+                }
+                console.log(animals);
+                
+                for (let i = 0; i < response.included.length; i++) {
+                    if (response.included[i].type === "pictures") {
+                        // going through each of the animals to check the id, this way is inefficient but I'll leave it up to you to improve it
+                        for (let j = 0; j < animals.length; j++) {
+                            if (animals[j].id0 === response.included[i].id) {
+                                animals[j].imgURL0 = response.included[i].attributes.original.url;
+                            }
 
+                            if (animals[j].id1 === response.included[i].id) {
+                                animals[j].imgURL1 =
+                                    response.included[i].attributes.original.url;
+                            }
 
-// //zipcode application
-//     var clientKey = "js-9qZHzu2Flc59Eq5rx10JdKERovBlJp3TQ3ApyC4TOa3tA8U7aVRnFwf41RpLgtE7";
-		
-// 		var cache = {};
-// 		var container = $("#example1");
-// 		var errorDiv = container.find("div.text-error");
-		
-// 		/** Handle successful response */
-// 		function handleResp(data)
-// 		{
-// 			// Check for error
-// 			if (data.error_msg)
-// 				errorDiv.text(data.error_msg);
-// 			else if ("city" in data)
-// 			{
-// 				// Set city and state
-// 				container.find("input[name='city']").val(data.city);
-// 				container.find("input[name='state']").val(data.state);
-// 			}
-// 		}
-		
-// 		// Set up event handlers
-// 		container.find("input[name='zipcode']").on("keyup change", function() {
-// 			// Get zip code
-// 			var zipcode = $(this).val().substring(0, 5);
-// 			if (zipcode.length == 5 && /^[0-9]+$/.test(zipcode))
-// 			{
-// 				// Clear error
-// 				errorDiv.empty();
-				
-// 				// Check cache
-// 				if (zipcode in cache)
-// 				{
-// 					handleResp(cache[zipcode]);
-// 				}
-// 				else
-// 				{
-// 					// Build url
-// 					var url = "https://www.zipcodeapi.com/rest/"+clientKey+"/info.json/" + zipcode + "/radians";
-					
-// 					// Make AJAX request
-// 					$.ajax({
-// 						"url": url,
-// 						"dataType": "json"
-// 					}).done(function(data) {
-// 						handleResp(data);
-						
-// 						// Store in cache
-// 						cache[zipcode] = data;
-// 					}).fail(function(data) {
-// 						if (data.responseText && (json = $.parseJSON(data.responseText)))
-// 						{
-// 							// Store in cache
-// 							cache[zipcode] = json;
-							
-// 							// Check for error
-// 							if (json.error_msg)
-// 								errorDiv.text(json.error_msg);
-// 						}
-// 						else
-// 							errorDiv.text('Request failed.');
-// 					});
-// 				}
-// 			}
-// 		}).trigger("change");
-//pet api
-var settings = {
-  "url": "https://api.rescuegroups.org/v5/public/animals/search/available/",
-  "method": "POST",
-  "timeout": 0,
-  "headers": {
-    "Content-Type": "application/vnd.api+json",
-    "Authorization": "TGBdZnRM"
-  },
-  "data": "{\n    \"data\": {\n        \"filters\": \n    \t[\n    \t\t{\n    \t\t\t\"fieldName\": \"animals.breedPrimaryId\",\n    \t\t\t\"operation\": \"equal\",\n    \t\t\t\"criteria\": \"90\"\n    \t\t},\n    \t\t{\n    \t\t\t\"fieldName\": \"animals.sizeGroup\",\n    \t\t\t\"operation\": \"equal\",\n    \t\t\t\"criteria\": [\"Small\",\"Medium\"]\n    \t\t}\n    \t],\n    \t\"filterProcessing\": \"1 and 2\",\n        \"filterRadius\":\n        \t{\n        \t\t\"miles\": 100,\n        \t\t\"lat\": 34.1031,\n        \t\t\"lon\": -118.416\n        \t}\n        \n    }\n}\n",
-};
-
-$.ajax(settings).done(function (response) {
-console.log(response);
-console.log(response.data[0].attributes.adoptionFeeString);
+                            if (animals[j].id2 === response.included[i].id) {
+                                animals[j].imgURL2 =
+                                    response.included[i].attributes.original.url;
+                                }
+                            }
+                        }
+                    }
+        animals.join("")
 
 
-var picture = response.data[1].attributes.pictureThumbnailUrl;
-console.log(picture);
-$(".picture").attr("src", picture);
-});
+        $(".start").on("click", function(event) {
+
+        
+        $("#homeContainer").addClass("hide");
+        $("#bodyContainer").removeClass("hide");
+
+        // Here, it prevents the submit button from trying to submit a form when clicked
+        event.preventDefault();
+        
+        $("#petImages").empty();
+        $(".descriptionTextDiv").empty();
+        
+        
+        for (let i = 0; i < animals.length; i++) {
+            var picture0 = $("<img>")
+            var picture1 = $("<img>")
+            
+                        let animalsArray0 = animals[i].imgURL0;
+                        let animalsArray1 = animals[i].imgURL1;
+                        let image0 = $(picture0).attr("src", animalsArray0);
+                        let image1 = $(picture1).attr("src", animalsArray1);
+                        
+                        console.log(picture0);
+                        let pictureResized0 = image0.addClass("pictureFinalArray");
+                        let pictureResized1 = image1.addClass("pictureFinalArray");
+                        $("#petImages").append(pictureResized0, pictureResized1);
+
+
+                        let descriptionText = response.data[i].attributes.descriptionText;
+                        $(".descriptionTextDiv").append(descriptionText);
+                // console.log(pictureArray);
+                    }
+            });
+    });
+
+    $("#home").on("click", function(event) {
+
+        $("#bodyContainer").addClass("hide");
+        $("#homeContainer").removeClass("hide");
+    });
+    
+
+     $("#right").on("click", function(event) {
+        localStorage.setItem("cities",animals);
+     });
+    
