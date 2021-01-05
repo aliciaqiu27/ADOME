@@ -53,9 +53,9 @@
                 <img src="homepage12.png" alt="homepage" class="homepageImg lg:inline-block">
 
                 <a href="https://www.pinterest.com/pin/348254983689669922/"><img alt="homepage" class="homepageImg lg:inline-block" src="homepage5.png"></a>
-                <a href="#responsive-header" class="start block mt-5 lg:mt-0 text-black-200 mr-5">
+                <button href="#responsive-header" id="start" class="block mt-5 lg:mt-0 text-black-200 mr-5">
                      Find a Fur-end 
-                </a>
+                </button>
     </section>
 
     <section id="bodyContainer" class="hide container mx-auto">
@@ -66,14 +66,12 @@
                 <div class="descriptionTextDiv"></div>
             </div>
             <div id="buttonContainer" class="container mx-auto">
-                <form>
                     <button id="left" class="bg-red-500 text-white font-bold py-8 px-8 rounded cursor-pointer">
-                        <a>← </a>
+                        <a href="#">← </a>
                     </button>
-                    <button id="s" class="bg-green-500 text-white font-bold py-8 px-8 rounded cursor-pointer">
-                        <a> → </a>
+                    <button id="next" class="bg-green-500 text-white font-bold py-8 px-8 rounded cursor-pointer">
+                        <a href="#"> → </a>
                     </button>
-                </form>
             </div>
 
             <hr class="rounded">
@@ -87,7 +85,11 @@
 
 </main>
 
-    <script src="html.js"></script>
+    <script src="script.js"></script>
+    <script src="globalvar.js"></script>
+    <script src="buttonEventListener.js"></script>
+
+
 </body>
 </html>
 
