@@ -88,8 +88,9 @@
 
     $("#home").on("click", function(event) {
 
-        $("#bodyContainer").addClass("hide");
-        $("#homeContainer").removeClass("hide");
+        $("#bodyContainer").toggleClass("hide show");
+        $("#homeContainer").toggleClass("hide show");
+        console.log("this is clicking")
     });
     
 
