@@ -101,4 +101,5 @@ hr.rounded {
 #map {
     height: 400px;
     width: 400px;
+    margin: auto;
 }
