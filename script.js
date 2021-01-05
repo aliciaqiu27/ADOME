@@ -26,6 +26,7 @@ $.ajax({
                 response.data[i].relationships.pictures.data[2].id;
         }
         animals.push(animalObj);
+        localStorage.setItem(animalObj, animalObj.descriptionText)
     }
     console.log(animals);
 
@@ -115,10 +116,7 @@ $("#left").on("click", function (event) {
 });
 
 
-// Note: This example requires that you consent to location sharing when
-// prompted by your browser. If you see the error "The Geolocation service
-// failed.", it means you probably did not give permission for the browser to
-// locate you.
+
 let map, infoWindow;
 
 function initMap() {
@@ -132,7 +130,7 @@ function initMap() {
   locationButton.classList.add("custom-map-control-button");
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
   locationButton.addEventListener("click", () => {
-    // Try HTML5 geolocation.
+  
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -150,7 +148,7 @@ function initMap() {
         }
       );
     } else {
-      // Browser doesn't support Geolocation
+      
       handleLocationError(false, infoWindow, map.getCenter());
     }
   });

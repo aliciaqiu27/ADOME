@@ -17,7 +17,7 @@ function buttonEventListener(condition, response) {
         $("#bodyContainer").removeClass("hide");
     }
     else if (condition === "next") {
-        currentAnimal++
+        currentAnimal++;
     }
     else if (condition === "left") {
 
