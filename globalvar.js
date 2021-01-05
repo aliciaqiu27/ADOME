@@ -1,0 +1,2 @@
+let currentAnimal;
+let animals = [];
