@@ -10,6 +10,10 @@
     <!-- <script defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Lobster&display=swap" rel="stylesheet">
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2eX-otjCiQwN1ebp6uK3uOl4Jpt1Gn2w&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
 
 
 </head>
@@ -39,13 +43,13 @@
     </nav>
         </section>
 
-    <section id="homeContainer" class="container">
+    <section id="homeContainer" class="show container">
         <hr class="rounded">
             <a id="description" class="block mt-5 lg:mt-0 text-black-200 mr-5">
-                Get Personalized Pet Matches
+                Get Personalized Pet Matches!
                 Answer a few quick questions to see your perfect matches on ADOME.
             </a>
-                <img src="homepage7.png" id="alt="homepage" class="homepageImg lg:inline-block">
+                <img src="homepage7.png" alt="homepage" class="homepageImg lg:inline-block">
                 <img src="homepage1.png" alt="homepage" class="homepageImg lg:inline-block">
                 <img src="homepage10.png" alt="homepage" class="homepageImg lg:inline-block">
 
@@ -73,6 +77,7 @@
                         <a href="#"> → </a>
                     </button>
             </div>
+            <div id="map" class="items-center"></div>
 
             <hr class="rounded">
     </section>
@@ -80,7 +85,7 @@
     <footer id="footerContainer" class="container mx-auto">
         <hr class="rounded">
             <a>©2020-2021 ADOME, Inc.</a>
-            <br>Phoeniz, Arizona</br>
+            <br>Phoenix, Arizona</br>
     </footer>
 
 </main>

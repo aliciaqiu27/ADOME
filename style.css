@@ -97,3 +97,8 @@ hr.rounded {
   border-top: 2px solid #bbb;
   border-radius: 1px;
 }
+
+#map {
+    height: 400px;
+    width: 400px;
+}
