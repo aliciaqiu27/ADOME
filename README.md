@@ -3,6 +3,7 @@
 https://gg2704.github.io/Pet-App/
 ## Usage
 This app allows animal lovers to find the newest furry friend by clicking left or right through numerous amount of animals and selecting their favorites.
+## Screenshot
 ![](C:\Users\xcgab\OneDrive\Pictures\Screenshots\Screenshot (29).png)
 ## Requirements 
 * Use a CSS framework other than Bootstrap.
