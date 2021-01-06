@@ -1,6 +1,3 @@
-
-       
-        
         $.ajax({
             url: "https://api.rescuegroups.org/v5/public/animals/search/available/",
             headers: { Authorization: "TGBdZnRM" },
