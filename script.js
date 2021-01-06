@@ -119,45 +119,32 @@ $.ajax({
 $("#home").on("click", function (event) {
 
     $("#bodyContainer").addClass("hide");
+    $("#savedContainer").addClass("hide");
     $("#homeContainer").removeClass("hide");
 });
 
+$("#saved").on("click", function (event) {
+
+  $("#bodyContainer").addClass("hide");
+  $("#homeContainer").addClass("hide");
+  $("#savedContainer").removeClass("hide");
+  prependPets();
+});
 
 $("#start").on("click", function (event) {
-    buttonEventListener("start", animals)
+  $("#homeContainer").addClass("hide");
+  $("#bodyContainer").removeClass("hide");
+    buttonEventListener()
 });
 
 $("#next").on("click", function (event) {
-    buttonEventListener("next", animals);
+    buttonEventListener();
 });
 
 $("#left").on("click", function (event) {
-    buttonEventListener("left", animals)
+    buttonEventListener()
 });
 
-
-
-
-
-
-
-// let map;
-
-// var presetLat = 33.448376;
-// var presetLong = -112.074036;
-
-
-// function initMap() {
-  
-//   const uluru = { lat: presetLat, lng: presetLong };
-  
-//   const map = new google.maps.Map(document.getElementById("map"), {
-//     zoom: 4,
-//     center: uluru,
-//   });
-  
-//   const marker = new google.maps.Marker({
-//     position: uluru,
-//     map: map,
-//   });
-// }
+$("#loved").on("click", function (event) {
+  savedPets();
+});
