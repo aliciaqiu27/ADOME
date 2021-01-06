@@ -17,4 +17,4 @@ This app allows animal lovers to find the newest furry friend by clicking left o
 ## Resources 
 * https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap
 * https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css
-* https://api.rescuegroups.org/v5/public/animals/search/available/
+* https://rescuegroups.org/services/adoptable-pet-data-api/
