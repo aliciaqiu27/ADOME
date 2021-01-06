@@ -25,6 +25,13 @@ $.ajax({
             animalObj.id2 =
                 response.data[i].relationships.pictures.data[2].id;
         }
+
+        if (response.data[i].relationships.locations.data[0]) {
+            animalObj.id3 =
+              response.data[i].relationships.locations.data[0].id;
+          console.log(animalObj.id3)
+        }
+        
         animals.push(animalObj);
     }
 
@@ -43,8 +50,22 @@ $.ajax({
                 }
 
                 if (animals[j].id2 === response.included[i].id) {
-                    animals[j].imgURL2 =
+                    animals[j].img =
                         response.included[i].attributes.original.url;
+                }
+              }
+            }
+            
+        if (response.included[i].type === "locations") {
+            // going through each of the animals to check the id, this way is inefficient but I'll leave it up to you to improve it
+            for (let j = 0; j < animals.length; j++) {
+
+                if (animals[j].id3 === response.included[i].id) {
+                    animals[j].lat =
+                    response.included[i].attributes.lat;
+                    console.log(animals[j].lat)
+                    animals[j].lon =
+                    response.included[i].attributes.lon;
                 }
             }
         }
