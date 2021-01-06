@@ -5,6 +5,7 @@ function buttonEventListener(condition, response) {
         // event.preventDefault();
 
     console.log(condition);
+    
 
     $("#petImages").empty();
     $(".descriptionTextDiv").empty();
@@ -43,8 +44,14 @@ function buttonEventListener(condition, response) {
     $("#petImages").append(pictureResized0, pictureResized1);
 
 
-    let descriptionText = animals.data[currentAnimal].attributes.descriptionText;
-    $(".descriptionTextDiv").append(descriptionText);
+    let petNameText = animals[currentAnimal].name;
+    $("#petName").text(petNameText);
+    console.log(petNameText)
 
+    let descriptionText = animals[currentAnimal].descriptionText;
+    $("#petInfo").text(descriptionText);
+    console.log(descriptionText)
+
+    
 }
 

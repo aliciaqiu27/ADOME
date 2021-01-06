@@ -26,13 +26,12 @@ $.ajax({
                 response.data[i].relationships.pictures.data[2].id;
         }
         animals.push(animalObj);
-        localStorage.setItem(animalObj, animalObj.descriptionText)
     }
-    console.log(animals);
+
 
     for (let i = 0; i < response.included.length; i++) {
         if (response.included[i].type === "pictures") {
-            // going through each of the animals to check the id, this way is inefficient but I'll leave it up to you to improve it
+            
             for (let j = 0; j < animals.length; j++) {
                 if (animals[j].id0 === response.included[i].id) {
                     animals[j].imgURL0 = response.included[i].attributes.original.url;
@@ -108,7 +107,7 @@ $("#start").on("click", function (event) {
 });
 
 $("#next").on("click", function (event) {
-    buttonEventListener("next", animals)
+    buttonEventListener("next", animals);
 });
 
 $("#left").on("click", function (event) {

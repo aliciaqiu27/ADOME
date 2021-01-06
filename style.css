@@ -103,3 +103,8 @@ hr.rounded {
     width: 400px;
     margin: auto;
 }
+
+#petName {
+    font-size: 36px;
+    font-weight: 700;
+}
