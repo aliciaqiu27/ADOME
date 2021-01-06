@@ -53,7 +53,12 @@ $.ajax({
                     animals[j].img =
                         response.included[i].attributes.original.url;
                 }
-                    // console.log(response.included[i].id)
+              }
+            }
+            
+        if (response.included[i].type === "locations") {
+            // going through each of the animals to check the id, this way is inefficient but I'll leave it up to you to improve it
+            for (let j = 0; j < animals.length; j++) {
 
                 if (animals[j].id3 === response.included[i].id) {
                     animals[j].lat =
