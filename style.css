@@ -69,10 +69,14 @@ body {
 
 #petInfo {
   max-height: 40%;
-  font-size: 25px;
+  font-size: 30px;
   width: 1300px;
-  text-align: center;
+  text-align: left;
   max-width: 60%;
+}
+
+p {
+    font-size:25px;
 }
 
 #buttonContainer {
@@ -120,4 +124,8 @@ hr.rounded {
 #petUrl {
     font-size: 36px;
     font-weight: 700;
+}
+
+#instructions {
+    size: 60px;
 }
