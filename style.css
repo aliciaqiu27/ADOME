@@ -1,12 +1,12 @@
 body {
-    background: url(Background-1.jpg);
+    background: url(images/Background-1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #mainContainer {
     max-width: 60%;
-    background-color: red;
+    background-color: gray;
 }
 
 #footerContainer, #bodyContainer, #homeContainer, #savedContainer {
@@ -55,6 +55,10 @@ body {
     font-family: 'Lobster', cursive;
 }
 
+#start {
+    background-color: white;
+    border: none;
+}
 
 .logo {
     display: inline-block;

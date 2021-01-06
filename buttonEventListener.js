@@ -102,9 +102,8 @@ function buttonEventListener() {
         : "Error: Your browser doesn't support geolocation."
     );
     infoWindow.open(map);
-
   }
-  
+
   //calls mapping function when buttons are clicked
   initMap();
 }
