@@ -46,12 +46,16 @@ function buttonEventListener(condition, response) {
 
     let petNameText = animals[currentAnimal].name;
     $("#petName").text(petNameText);
-    console.log(petNameText)
 
     let descriptionText = animals[currentAnimal].descriptionText;
     $("#petInfo").text(descriptionText);
-    console.log(descriptionText)
 
-    
+    $("#next").on("click", function (event) {
+        var savedPets = ["placeholder"];
+        var favPet = localStorage.key(0);
+        var stringedFavPet = JSON.stringify(animals[currentAnimal-1]);
+        savedPets.push(stringedFavPet);
+        localStorage.setItem("favPet", stringedFavPet);
+    });
 }
 
