@@ -5,6 +5,7 @@ function buttonEventListener(condition, response) {
         // event.preventDefault();
 
     console.log(condition);
+    
 
     $("#petImages").empty();
     $(".descriptionTextDiv").empty();
@@ -17,7 +18,7 @@ function buttonEventListener(condition, response) {
         $("#bodyContainer").removeClass("hide");
     }
     else if (condition === "next") {
-        currentAnimal++
+        currentAnimal++;
     }
     else if (condition === "left") {
 
@@ -43,8 +44,18 @@ function buttonEventListener(condition, response) {
     $("#petImages").append(pictureResized0, pictureResized1);
 
 
-    let descriptionText = animals.data[currentAnimal].attributes.descriptionText;
-    $(".descriptionTextDiv").append(descriptionText);
+    let petNameText = animals[currentAnimal].name;
+    $("#petName").text(petNameText);
 
+    let descriptionText = animals[currentAnimal].descriptionText;
+    $("#petInfo").text(descriptionText);
+
+    $("#next").on("click", function (event) {
+        var savedPets = ["placeholder"];
+        var favPet = localStorage.key(0);
+        var stringedFavPet = JSON.stringify(animals[currentAnimal-1]);
+        savedPets.push(stringedFavPet);
+        localStorage.setItem("favPet", stringedFavPet);
+    });
 }
 

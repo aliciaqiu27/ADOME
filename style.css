@@ -101,4 +101,15 @@ hr.rounded {
 #map {
     height: 400px;
     width: 400px;
+    margin: auto;
+}
+
+#petName {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+#petUrl {
+    font-size: 36px;
+    font-weight: 700;
 }
