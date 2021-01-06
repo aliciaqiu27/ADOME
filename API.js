@@ -9,7 +9,7 @@ $.ajax({
   //There were two separate arrays that provided different information for the pet, so this would help it combine information from both arrays.
   for (let i = 0; i < response.data.length; i++) {
 
-    
+
     //Stores relevant pet data in an object array which will be pushed into an array
     let animalObj = {
       name: response.data[i].attributes.name,
@@ -67,40 +67,5 @@ $.ajax({
       }
     }
   }
-  console.log(animals);
 });
 
-
-//on-click functions for buttons. 
-$("#home").on("click", function (event) {
-
-  $("#bodyContainer").addClass("hide");
-  $("#savedContainer").addClass("hide");
-  $("#homeContainer").removeClass("hide");
-});
-
-$("#saved").on("click", function (event) {
-
-  $("#bodyContainer").addClass("hide");
-  $("#homeContainer").addClass("hide");
-  $("#savedContainer").removeClass("hide");
-  prependPets();
-});
-
-$("#start").on("click", function (event) {
-  $("#homeContainer").addClass("hide");
-  $("#bodyContainer").removeClass("hide");
-  buttonEventListener()
-});
-
-$("#next").on("click", function (event) {
-  buttonEventListener();
-});
-
-$("#left").on("click", function (event) {
-  buttonEventListener()
-});
-
-$("#loved").on("click", function (event) {
-  savedPets();
-});

@@ -56,8 +56,9 @@ body {
 }
 
 #start {
-    background-color: white;
+    background-color: rgb(248, 210, 83);
     border: none;
+    border-radius: 20%;
 }
 
 .logo {
@@ -83,9 +84,10 @@ body {
   height: 600px;
 }
 
-button {
+#next, #loved {
     box-shadow: rgba(160, 131, 131, 0.719) 2px 2px 5px 2px;
-    font-size: 30px;
+    font-size: 40px;
+    margin:auto;
 }
 
 .pictureFinalArray, .savedPetsDivCSS {
@@ -105,8 +107,8 @@ hr.rounded {
 }
 
 #map {
-    height: 400px;
-    width: 400px;
+    height: 800px;
+    width: 800px;
     margin: auto;
 }
 
