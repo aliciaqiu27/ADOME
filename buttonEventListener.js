@@ -110,7 +110,7 @@ function buttonEventListener() {
 
 
 //creates an array for local storage to grab data from local storage associated with "favPet" key
-let savedPetsArray = JSON.parse(localStorage.getItem("favPet")) || []
+let savedPetsArray = JSON.parse(localStorage.getItem("favPet")) || [];
 
 //image URLs from "animals" array is being stored in the new array called "savedPetsArray". This is only when "love" button is clicked.
 function savedPets() {
